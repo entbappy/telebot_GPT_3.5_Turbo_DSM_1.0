@@ -23,5 +23,12 @@ async def command_start_handler(message: types.Message):
     await message.reply("Hi\nI am Echo Bot!\nPowered by aiogram.")
 
 
+@dp.message_handler()
+async def echo(message: types.Message):
+    """
+    This will retrun echo
+    """
+    await message.answer(message.text)
+
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
